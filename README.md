@@ -143,9 +143,9 @@ In Python, we write these conditional statements using the keywords **`if`** and
 
 ```python
 if condition:
-  # lines of code to run if condition is TRUE
+    # lines of code to run if condition is True
 else:
-  # lines of code to run if condition is FALSE
+    # lines of code to run if condition is False
 ```
 
 The **`condition`** can be any Boolean value (or any expression that evaluates to a boolean value). Both the **`if`** statement and **`else`** clause are followed by a colon **`:`** and a **block**, which is a set of _indented_ statements to run (similar to the blocks used in functions). It is also possible to _omit_ the `else` statement and its block if there are no instructions to run in the "otherwise" situation:
@@ -240,7 +240,7 @@ Relational operators all have logical opposites (e.g., `==` is the opposite of `
 if x > 3:
     print("big X!")
 
-if 3 <= x:
+if 3 < x:
     print("big X!")
 ```
 
