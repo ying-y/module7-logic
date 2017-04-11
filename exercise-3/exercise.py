@@ -17,7 +17,21 @@
 # Be sure to consider both positive AND negative distances!
 # BONUS: Also print out whether the guess is high or low
 
-
+def print_hot_or_cold(target, guess): 
+    if target==guess:
+        print("got it!")
+    elif abs(target-guess)<=1:
+        print("scalding hot")
+    elif abs(target-guess)<=3:
+        print("very warm")
+    elif abs(target-guess)<=8:
+        print("cold")
+    elif abs(target-guess)<=13:
+        print("very cold")
+    else:
+        print("icy freezing miserably cold")
+#Use a temporoty variable distance to represent abs(target-guess) is better!!!
+        
 
 # Define a function `guess_number()` that takes a single argument (a target number)
 # and prompts the user for a guess using the `input()` method. Your function should
@@ -29,8 +43,19 @@
 # or by simply calling your `guess_number() method again IF the user didn't get
 # the answer right. This is an example of **recursion**.
 
-
+def guess_number(target):
+    guess=int(input("Please input a guess number: "))
+    print_hot_or_cold(target, guess)
+    if target != guess:
+        guess_number(target)
+    
 
 # If the file is run as a top-level script, your script should pick a random number
 # between 1 and 50 as the target and then start the game. You should inform the
 # use of the range of numbers before asking them for a guess.
+
+if __name__=="__main__":
+    from random import randint
+    target=randint(1,50)
+    print("I picked a number between 1 and 50. Try and guess!")
+    guess_number(target)
